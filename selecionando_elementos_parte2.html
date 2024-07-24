@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="text" placeholder="input 1" />
+    <input type="text" placeholder="input 2" />
+    <input type="text" placeholder="input 3" />
+
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+
+    <ul class="lista1">
+      <li>Opcão 1</li>
+      <li class="exemplo2">Opcão 2</li>
+      <li class="exemplo2">Opcão 3</li>
+    </ul>
+
+    <ul class="lista2">
+      <li class="exemplo2">Opcão 1</li>
+      <li class="exemplo2">Opcão 2</li>
+      <li>Opcão 3</li>
+    </ul>
+  </body>
+
+  <script>
+    // Combinação de seletores
+
+    // Selecionar elmentos de tag específicas
+    // console.log($('div.exemplo1'))
+
+    // Selecionar elementos de classes específicas
+    //console.log($(".lista1 .exemplo2"));
+
+    // Atuação sobre o array de retorno dos elementos selecionados
+    console.log($(".lista1 .exemplo2:first"));
+    console.log($(".lista1 .exemplo2:last"));
+    console.log($(".lista1 .exemplo2:even"));
+    console.log($(".lista1 .exemplo2:odd"));
+    </script>
+</html>
