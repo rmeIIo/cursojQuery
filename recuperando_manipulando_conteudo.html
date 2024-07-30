@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery</title>
+    
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        console.log('conteudo div 1:', $('#div1').html())
+        console.log('conteudo div 2:', $('#div2').html())
+
+        console.log($('#div1').html('<strong style="color: red;">Novo conteudo</strong>'))
+        console.log($('#div2').text('<strong style="color: red;">Novo conteudo</strong>'))
+      })
+    </script>
+  </head>
+  <body>
+    <div id="div1" style="border:1px solid #000; width: 150px; height: 150px;">
+      <a href="#">teste</a>
+      <p>esse é um teste</p>
+      teste
+      <div>outro teste</div>
+    </div>
+
+
+    <div id="div2" style="border:1px solid #000; width: 150px; height: 150px;">Div 2</div>
+  </body>
+
+</html>
