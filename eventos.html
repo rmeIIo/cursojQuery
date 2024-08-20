@@ -4,7 +4,20 @@
     <meta charset="UTF-8" />
     <title>jQuery</title>
 
-    <style></style>
+    <style>
+      #divExterna {
+        background-color: #ccc;
+        width: 80px;
+        height: 80px;
+        padding: 70px;
+      }
+
+      #divInterna {
+        width: 80px;
+        height: 80px;
+        background-color: blue;
+      }
+    </style>
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -26,8 +39,41 @@
         });
 
         $("#div1").scroll((e) => {
-					$(e.target).css('background-color', 'blue')
-				});
+          $(e.target).css("background-color", "blue");
+        });
+
+        $("#btn1").mousedown(() => {
+          $("#div2").css("background-color", "green");
+        });
+
+        $("#btn1").click(() => {
+          $("#div2").css("background-color", "blue");
+        });
+
+        $("#btn2").dblclick(() => {
+          $("#div2").css("background-color", "yellow");
+        });
+
+        $("#div2").mousemove((e) => {
+          console.log(e.offsetX, e.offsetY);
+          $("#resultadoDiv").html(`X: ${e.offsetX} Y: ${e.offsetY}`);
+        });
+
+        $('#divExterna').mouseenter(() => {
+          $('#resultadoDiv1').html('Entrou');
+        })
+
+        $('#divExterna').mouseleave(() => {
+          $('#resultadoDiv1').html('Saiu');
+        })
+
+        $('#divInterna').mouseenter(() => {
+          $('#resultadoDiv2').html('Entrou');
+        })
+
+        $('#divInterna').mouseleave(() => {
+          $('#resultadoDiv2').html('Saiu');
+        })
       });
     </script>
   </head>
@@ -65,9 +111,10 @@
       <hr />
 
       <h3>Mouse</h3>
-      <button type="button">Clique aqui</button>
-      <button type="button">Clique aqui 2x</button>
+      <button id="btn1" type="button">Clique aqui</button>
+      <button id="btn2" type="button">Clique aqui 2x</button>
       <div
+        id="div2"
         style="
           background-color: red;
           width: 80px;
@@ -77,6 +124,13 @@
         "
       ></div>
       <span>Resultado do evento sobre a div</span>
+      <span id="resultadoDiv"></span>
+      <div id="divExterna">
+        <div id="divInterna"></div>
+      </div>
+      <span>Div Externa: </span> <span id="resultadoDiv1"></span>
+      <br>
+      <span>Div Interna</span> <span id="resultadoDiv2"></span>
       <hr />
 
       <h3>Teclado</h3>
