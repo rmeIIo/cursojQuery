@@ -74,6 +74,21 @@
         $('#divInterna').mouseleave(() => {
           $('#resultadoDiv2').html('Saiu');
         })
+
+        $('#teclado').keydown((e) => {
+          $('#resultadoTecla').html(`Tecla pressionada: ${e.key}`);
+        })
+
+        $('#teclado').keyup((e) => {
+          $('#resultadoTecla').html(`Tecla solta: ${e.key}`);
+          console.log(e.keyCode)
+
+          if(e.keyCode === 13) {
+            txt = $('#teclado').val();
+            $('#resultadoTecla').html(txt);
+            $('#teclado').val('');
+          }
+        })
       });
     </script>
   </head>
@@ -135,8 +150,8 @@
 
       <h3>Teclado</h3>
       <span>Nome:</span>
-      <input type="text" />
-      <span>Resultado do evento sobre o input</span>
+      <input type="text" id="teclado"/>
+      <span id="resultadoTecla">Resultado do evento sobre o input</span>
       <hr />
 
       <h3>Formulário</h3>
